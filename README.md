@@ -2,7 +2,7 @@
 Комментарии:
 
 
-### [demo](http://blog.0xfc.cn/2015/09/12/paging/) ###
+### [demo](https://ordomalleus.github.io/) ###
 
 
 **install**<br/>
