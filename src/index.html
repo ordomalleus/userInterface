@@ -1,0 +1,43 @@
+<html lang="ru">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="image/x-icon" href="/css/img/favicon.ico">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link rel="stylesheet" href="/css/libs/libs.min.css">
+  <!--CSS-->
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body ng-app="App" ng-cloak>
+
+  <div ng-controller="AppCtrl as ctrl">
+
+    <div class="container mB20">
+      <div class="row">
+        <div class="col-md-12">
+          <header-application></header-application>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <menu-application tab-menu="ctrl.model.section"></menu-application>
+          <list-user ng-if="ctrl.model.section.list.active === true"></list-user>
+          <form-content ng-if="ctrl.model.section.form.active === true"></form-content>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+<!-- Angular Material requires Angular.js Libraries -->
+<script src="/js/libs/angular-full.js"></script>
+<!--JS-->
+<script src="/js/app/app.js"></script>
+
+</body>
+</html>

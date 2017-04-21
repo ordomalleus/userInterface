@@ -1,0 +1,77 @@
+<div style="visibility: hidden">
+  <div class="md-dialog-container" id="showDialogFormDetailed">
+    <md-dialog aria-label="Редактирование пользователя">
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>Карточка редактирования пользователя {{ $ctrl.userObj.user_name }}</h2>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="$ctrl.offDialog()">
+            x
+          </md-button>
+        </div>
+      </md-toolbar>
+      <md-dialog-content>
+        <div flex layout="row" layout-align="start center" layout-wrap style="padding: 20px">
+
+          <md-input-container flex="20" class="md-block">
+            <label>user_id</label>
+            <input ng-model="$ctrl.userObj.user_id" disabled>
+          </md-input-container>
+
+          <md-input-container flex="20" class="md-block">
+            <label>user_name</label>
+            <input ng-model="$ctrl.userObj.user_name">
+          </md-input-container>
+
+          <md-input-container flex="20" class="md-block">
+            <label>user_custom</label>
+            <input ng-model="$ctrl.userObj.user_custom">
+          </md-input-container>
+
+          <md-input-container flex="20" class="md-block">
+            <label>email</label>
+            <input type="email" ng-model="$ctrl.userObj.email">
+          </md-input-container>
+
+          <md-input-container flex="20" class="md-block">
+            <label>register_date</label>
+            <input ng-model="$ctrl.userObj.register_date" disabled>
+          </md-input-container>
+
+          <md-input-container flex="20" class="md-block">
+            <label>balance</label>
+            <input ng-model="$ctrl.userObj.balance" disabled>
+          </md-input-container>
+
+          <md-input-container flex="20" class="md-block">
+            <label>wallet_amount</label>
+            <input name="title" ng-model="$ctrl.userObj.wallet_amount" disabled>
+          </md-input-container>
+
+          <md-input-container flex="20" class="md-block">
+            <label>wallet_currency</label>
+            <input name="title" ng-model="$ctrl.userObj.wallet_currency" disabled>
+          </md-input-container>
+
+          <md-checkbox flex="20" ng-model="$ctrl.userObj.enabled">
+            enabled
+          </md-checkbox>
+        </div>
+      </md-dialog-content>
+
+      <md-dialog-actions layout="column" layout-align="center center">
+
+        <div layout="column" layout-align="center center" class="md-dialog-content"
+             ng-show="$ctrl.model.loadPut" style="min-width: 100px;min-height: 100px">
+          <p class="md-display-1">Загрузка...</p>
+          <md-progress-circular data-md-mode="indeterminate" data-md-diameter="100"></md-progress-circular>
+        </div>
+
+        <md-button class="md-raised md-warn" ng-click="$ctrl.saveFormDialog()">
+          <md-icon md-svg-src="/css/img/ic_restore_white_24px.svg" aria-label=""></md-icon>
+          Сохранить
+        </md-button>
+      </md-dialog-actions>
+    </md-dialog>
+  </div>
+</div>

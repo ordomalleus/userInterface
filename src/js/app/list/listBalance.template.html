@@ -1,0 +1,45 @@
+<div style="visibility: hidden">
+  <div class="md-dialog-container" id="showDialogFormBalance">
+    <md-dialog aria-label="Операции пользователя">
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>Карточка операций пользователя ID: {{ $ctrl.userId }}</h2>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="$ctrl.offDialog()">
+            x
+          </md-button>
+        </div>
+      </md-toolbar>
+
+      <md-dialog-content>
+        <div class="md-dialog-content">
+
+          <md-input-container flex="30" class="md-block">
+            <label>amount</label>
+            <input type="number" ng-model="$ctrl.model.amount">
+          </md-input-container>
+
+          <md-input-container class="md-block">
+            <label>comment</label>
+            <textarea name="description" ng-model="$ctrl.model.comment" max-rows="5" md-no-resize></textarea>
+          </md-input-container>
+
+          <div layout="column" layout-align="center center" class="md-dialog-content"
+               ng-show="$ctrl.model.loadPut" style="min-width: 100px;min-height: 100px">
+            <p class="md-display-1">Загрузка...</p>
+            <md-progress-circular data-md-mode="indeterminate" data-md-diameter="100"></md-progress-circular>
+          </div>
+
+          <div layout="row" layout-align="center center">
+            <md-button class="md-raised md-warn" ng-click="$ctrl.setBalanceUser()">
+              <md-icon md-svg-src="/css/img/ic_restore_white_24px.svg" aria-label=""></md-icon>
+              Отправить
+            </md-button>
+          </div>
+
+        </div>
+
+      </md-dialog-content>
+    </md-dialog>
+  </div>
+</div>
